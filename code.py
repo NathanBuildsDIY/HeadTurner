@@ -111,14 +111,9 @@ while True:
     
     #check for a click first
     if lis3dh.tapped:
-      if initial_tap_flag:
-        #ignore initial tap+shake that turns us on, don't actually click
-        print("Initial tap coupled with shake, ignore")
-        initial_tap_flag = False
-      else:
-        print("Tapped! Click mouse")
-        mouse.click(Mouse.LEFT_BUTTON)
-        time.sleep(0.01)
+      print("Tapped! Click mouse")
+      mouse.click(Mouse.LEFT_BUTTON)
+      time.sleep(0.01)
     else:
       #capture accelerometer changes and move mouse accordingly
       inst_x,inst_y,inst_z = readAccelerometer()
